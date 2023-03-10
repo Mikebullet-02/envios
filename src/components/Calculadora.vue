@@ -1,7 +1,17 @@
 
 <template>
+  <div class="md:container md:mx-auto my-10">
   <div className="flex flex-col  w-full">
+  <h1 class="text-4xl font-extrabold capitalize px-14 py-10">CALCULA EL PESO DE TU PAQUETE</h1>
+   <div class="flex flex-wrap justify-center">
+      <img
+        src="../assets/CajaODM.png"
+        class="h-auto max-w-sm"
+        alt="" />
+      </div>
     <div class="grid-container grid grid-cols-6 my-4 items-center">
+    
+      
       <label
         class="col-span-1 mx-10 text-gray-700 text-xl font-bold"
         for="inline-alto"
@@ -54,6 +64,11 @@
         >
       </div>
     </div>
+     <div class="container h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle">
+      <p>UTILIZA LA FÓRMULA:</p>
+      <p>(Alto(cm) * Ancho(cm) * Largo(cm))/6000 </p>
+      </div>  
+  </div>
   </div>
 </template>
 

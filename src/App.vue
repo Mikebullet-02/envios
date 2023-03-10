@@ -4,33 +4,36 @@
 
   <Envios></Envios>
 
-  <div class="cobertura">
+  <div class="container mx-auto py-10">
     <div class="titulo">
-      <h1>COBERTURA DE ENVÍOS</h1>
+      <h1 class="text-4xl font-extrabold capitalize px-14 py-10">
+        COBERTURA DE ENVÍOS
+      </h1>
       <div>
-        <section class="main-section">
-          <form>
-            <div class="caja">
-              <select v-model="origen" @change="(e) => cargar(e)">
-                <option value="">¿Dónde dejar tus paquetes?</option>
-                <option
-                  v-for="destinos in databaseStore.$state.documents"
-                  :key="destinos.id"
-                  :value="destinos"
+          <div class="container flex flex-none items-center">
+            <div class="container ml-40 mt-10">
+              <div class="container flex-none">
+                <select
+                  v-model="origen"
+                  @change="(e) => cargar(e)"
+                  class="bg-white-50  mt-0 w-96 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
-                  {{ destinos.origen }}
-                </option>
-              </select>
+                  <label value="">¿Dónde dejar tus paquetes?</label>
+                  <option
+                    v-for="destinos in databaseStore.$state.documents"
+                    :key="destinos.id"
+                    :value="destinos"
+                  >
+                    {{ destinos.origen }}
+                  </option>
+                </select>
+              </div>
             </div>
-            <div class="card">
-              <h2>Dirección</h2>
-              <h3>De:</h3>
-              <p v-if="origen != null">
-                {{ origen.ubicacion }}
-              </p>
-            </div>
-            <div class="caja">
-              <select v-model="destino">
+            <div class="container ml-40 mt-10">
+              <select
+                v-model="destino"
+                class="bg-white-50  mt-0 w-96 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
                 <option value="">¿Dónde recoger tus paquetes?</option>
                 <option
                   v-for="destinos in databaseStore.$state.destinos"
@@ -41,33 +44,160 @@
                 </option>
               </select>
             </div>
-            <div class="card">
-              <h2>Dirección</h2>
-              <h3>De:</h3>
-              <p v-if="destino != null">
-                {{ destino.direccion }}
-              </p>
+          </div>
+          <div class="container ml-48 mt-5 flex-none">
+            <h2>Dirección</h2>
+            <h3>De:</h3>
+            <p v-if="origen != null">
+              {{ origen.ubicacion }}
+            </p>
+          </div>
+
+          <div class="container ml-96 mt-5">
+            <h2>Dirección</h2>
+            <h3>A:</h3>
+            <p v-if="destino != null">
+              {{ destino.direccion }}
+            </p>
+          </div>
+      
+        <div class="flex justify-center mt-10 grid gap-4 grid cols-2">
+          <div
+            class="block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
+          >
+            <div
+              class="border-b-2 border-neutral-100 py-3 px-6 dark:border-neutral-600 dark:text-neutral-50"
+            >
+              Sobres
             </div>
-          </form>
-          <div v-if="destino != null">
+            <div class="p-6">
+              <h5
+                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+              >
+                Hasta 25 hojas
+              </h5>
+              <div v-if="destino != null">
             <div
               v-for="key in Object.keys(destino.precios)"
               :key="key"
-              class="card"
+              class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
             >
               <h2>{{ key }}</h2>
               <p>${{ destino.precios[key] }}</p>
             </div>
           </div>
-
-          <div class="h-e-a-d-w-e-b-rectangle">
-            <span class="h-e-a-d-w-e-b-text02">
-              <span>
-                <span> ***VALOR DE REFERENCIA SUJETO A CAMBIOS*** </span>
-              </span>
-            </span>
+            </div>
           </div>
-        </section>
+          <div
+            class="block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
+          >
+            <div
+              class="border-b-2 border-neutral-100 py-3 px-6 dark:border-neutral-600 dark:text-neutral-50"
+            >
+              Paquetes
+            </div>
+            <div class="p-6">
+              <h5
+                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+              >
+                De 0 - 10 Kg.
+              </h5>
+             <div v-if="destino != null">
+            <div
+              v-for="key in Object.keys(destino.precios)"
+              :key="key"
+              class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+            >
+              <h2>{{ key }}</h2>
+              <p>${{ destino.precios[key] }}</p>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div
+            class="block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
+          >
+            <div
+              class="border-b-2 border-neutral-100 py-3 px-6 dark:border-neutral-600 dark:text-neutral-50"
+            >
+              Cajas
+            </div>
+            <div class="p-6">
+              <h5
+                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+              >
+                De 1 - 10 Kg.
+              </h5>
+          <div v-if="destino != null">
+            <div
+              v-for="key in Object.keys(destino.precios)"
+              :key="key"
+              class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+            >
+              <h2>{{ key }}</h2>
+              <p>${{ destino.precios[key] }}</p>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div
+            class="block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
+          >
+            <div
+              class="border-b-2 border-neutral-100 py-3 px-6 dark:border-neutral-600 dark:text-neutral-50"
+            >
+              Cajas
+            </div>
+            <div class="p-6">
+              <h5
+                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+              >
+                De 11 - 20 Kg.
+              </h5>
+              <div v-if="destino != null">
+            <div
+              v-for="key in Object.keys(destino.precios)"
+              :key="key"
+              class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+            >
+              <h2>{{ key }}</h2>
+              <p>${{ destino.precios[key] }}</p>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div
+            class="block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
+          >
+            <div
+              class="border-b-2 border-neutral-100 py-3 px-6 dark:border-neutral-600 dark:text-neutral-50"
+            >
+              Maletas
+            </div>
+            <div class="p-6">
+              <h5
+                class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+              >
+                De 21 - 30 Kg.
+              </h5>
+            <div v-if="destino != null">
+            <div
+              v-for="key in Object.keys(destino.precios)"
+              :key="key"
+              class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+            >
+              <h2>{{ key }}</h2>
+              <p>${{ destino.precios[key] }}</p>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
+        >
+          <p>***VALOR DE REFERENCIA SUJETO A CAMBIOS***</p>
+        </div>
       </div>
     </div>
   </div>
@@ -99,6 +229,4 @@ const cargar = async () => {
 };
 </script>
 
-
-<style>
-</style>
+<style></style>
