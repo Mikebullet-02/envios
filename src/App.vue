@@ -61,7 +61,7 @@
             </p>
           </div>
       
-        <div class="flex justify-center mt-10 grid gap-4 grid cols-2">
+        <div class="flex justify-around items-center mt-10 wrap">
           <div
             class="block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
           >

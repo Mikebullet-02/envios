@@ -2,7 +2,7 @@
 <div class="container w-screen h-full">
 <header>
   <nav
-    class="relative flex w-full h-20 items-end grid justify-items-end bg-white py-10 text-xl text-neutral-600 hover:text-neutral-700 focus:text-neutral-700 blue:bg-neutral-600 blue:text-neutral-200 md:flex-wrap md:justify-end"
+    class="relative flex w-full h-20 items-end grid justify-items-end bg-white py-10 text-xl text-blue-900 hover:text-black-800 focus:text-black-700 black:bg-black-600 blue:text-black-200 md:flex-wrap md:justify-end"
     data-te-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between px-6">
       <div class="flex items-center">
@@ -102,7 +102,7 @@
    
   <img
     src="../assets/personajeODM.png"
-    class="h-auto max-w-sm  object-right h-30 inline-block ml-80 w-64"
+    class="imagen h-auto max-w-sm  object-right h-30 ml-80 w-64"
     alt="" />
 
   </div>
@@ -112,7 +112,10 @@
 </template>
 
 <style>
-.ml-80{
-  margin-top: -400px;
+.imagen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 170px;
 }
 </style>
