@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'blue-rgba':'rgba(0, 51, 104, 0.5)',
+        'odm':'#003368',
       }
     },
   },

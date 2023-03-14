@@ -1,12 +1,12 @@
 <template>
-  <div class="container bg-gray-300 w-screen h-auto">
+  <div class="container bg-gray-300 w-full h-auto max-w-screen-xl">
     <h1 class="text-4xl font-extrabold capitalize px-14 py-10">
       TIPOS DE ENVÍOS
     </h1>
 
-    <div class="flex justify-around flex-wrap">
+    <div class="flex justify-between flex-wrap">
       <div class="flex space-x-5">
-        <div class="block max-w-sm rounded-lg bg-sky-900/60">
+        <div class="h-auto w-auto block max-w-sm rounded-lg bg-sky-900/60">
           <div class="p-8">
             <h5
               class="m-10 p-5 text-3xl font-bold leading-tight text-black text-center"
@@ -25,7 +25,7 @@
             </a>
           </div>
         </div>
-        <div class="block max-w-sm rounded-lg bg-sky-900/60">
+        <div class="h-auto w-auto block max-w-sm rounded-lg bg-sky-900/60">
           <div class="p-8">
             <h5
               class="m-10 p-5 text-3xl font-bold leading-tight text-black text-center"
@@ -35,14 +35,14 @@
             <p class="mb-5 text-black-600 text-center text-2xl">De 0 - 1 Kg.</p>
             <a href="">
               <img
-                class="rounded-t-lg py-1 w-auto h-36 px-10"
+                class="rounded-t-lg py-1 w-auto h-28 mt-32 px-16"
                 src="../assets/CajaODM.png"
                 alt=""
               />
             </a>
           </div>
         </div>
-        <div class="block max-w-sm rounded-lg bg-sky-900/60">
+        <div class="h-auto w-auto block max-w-sm rounded-lg bg-sky-900/60">
           <div class="p-8">
             <h5
               class="m-10 p-5 text-3xl font-bold leading-tight text-black text-center"
