@@ -1,10 +1,9 @@
 <template>
-  <div class="container bg-gray-300 w-full h-auto max-w-screen-xl">
+  <div class="bg-gray-300 w-screen h-auto">
     <h1 class="text-4xl font-extrabold capitalize px-14 py-10">
       TIPOS DE ENVÍOS
     </h1>
-
-    <div class="flex justify-between flex-wrap">
+    <div class="flex justify-around flex-wrap">
       <div class="flex space-x-5">
         <div class="h-auto w-auto block max-w-sm rounded-lg bg-sky-900/60">
           <div class="p-8">
@@ -92,7 +91,7 @@
     </div>
 
     <div
-      class="container h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
+      class="h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
     >
       <p>VOLUMEN MÁXIMO EN TU ENVÍO:</p>
       <p>65 X 50 X 55 = 30cm^3</p>

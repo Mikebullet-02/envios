@@ -1,22 +1,20 @@
 <template>
   <router-view />
   <Header></Header>
-
   <Envios></Envios>
-
-  <div class="container mx-auto py-10 max-w-screen-xl">
+  <div class="mx-auto py-10">
     <div class="titulo">
-      <h1 class="text-4xl font-extrabold capitalize px-14 py-10">
+      <h1 class="text-4xl font-extrabold capitalize px-20 py-12">
         COBERTURA DE ENVÍOS
       </h1>
       <div class="">
-        <div class="container flex flex-none items-center">
+        <div class="flex flex-none items-center">
           <div class="container ml-40 mt-10">
             <div class="container flex-none">
               <select
                 v-model="origen"
                 @change="(e) => cargar(e)"
-                class="bg-white-50 mt-0 w-96 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="bg-white-50 mt-0 w-96 border border-gray-300 text-neutral-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <label value="">¿Dónde dejar tus paquetes?</label>
                 <option
@@ -28,12 +26,13 @@
                 </option>
               </select>
             </div>
-              <div class="mt-10">
+            <div class="mt-10">
               <h2>Dirección</h2>
-          <h3>De:</h3>
-          <p v-if="origen != null">
-            {{ origen.ubicacion }}
-          </p></div>
+              <h3>De:</h3>
+              <p v-if="origen != null">
+                {{ origen.ubicacion }}
+              </p>
+            </div>
           </div>
           <div class="container ml-40 mt-10 mr-32">
             <select
@@ -49,25 +48,20 @@
                 {{ destinos.nombre }}
               </option>
             </select>
-            
-        <div class="mt-10">
-          <h2>Dirección</h2>
-          <h3>A:</h3>
-          <p v-if="destino != null">
-            {{ destino.direccion }}
-          </p>
-        </div>
+
+            <div class="mt-10">
+              <h2>Dirección</h2>
+              <h3>A:</h3>
+              <p v-if="destino != null">
+                {{ destino.direccion }}
+              </p>
+            </div>
           </div>
         </div>
-       <div>
-
-       
-       </div>
-
         <div class="flex justify-around items-center mt-10 wrap">
           <div
-            class="h-64 w-64 block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
-            >
+            class="block max-w-sm rounded-lg bg-white text-center shadow-lg dark:bg-neutral-700"
+          >
             <div
               class="border-b-2 border-neutral-100 py-3 px-6 dark:border-neutral-600 dark:text-neutral-50"
             >
@@ -197,7 +191,7 @@
           </div>
         </div>
         <div
-          class="container h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
+          class="h-auto w-full pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
         >
           <p>***VALOR DE REFERENCIA SUJETO A CAMBIOS***</p>
         </div>
@@ -212,7 +206,6 @@
 
 <script setup>
 import Header from "./components/Header.vue";
-import Landing from "./components/Landing.vue";
 import Envios from "./components/Envios.vue";
 import Calculadora from "./components/Calculadora.vue";
 import Footer from "./components/Footer.vue";
@@ -231,5 +224,3 @@ const cargar = async () => {
   await databaseStore.getDocumentByKey("envios", "id", origen.value.id);
 };
 </script>
-
-<style></style>
