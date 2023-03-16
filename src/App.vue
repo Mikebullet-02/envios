@@ -2,7 +2,7 @@
   <router-view />
   <Header></Header>
   <Envios></Envios>
-  <div class="mx-auto py-10">
+  <div class="container mx-auto py-10">
     <div class="titulo">
       <h1 class="text-4xl font-extrabold capitalize px-20 py-12">
         COBERTURA DE ENVÍOS
@@ -79,7 +79,6 @@
                   :key="key"
                   class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
                 >
-                  <h2>{{ key }}</h2>
                   <p>${{ destino.precios[key] }}</p>
                 </div>
               </div>
@@ -191,7 +190,7 @@
           </div>
         </div>
         <div
-          class="h-auto w-full pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
+          class="h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
         >
           <p>***VALOR DE REFERENCIA SUJETO A CAMBIOS***</p>
         </div>

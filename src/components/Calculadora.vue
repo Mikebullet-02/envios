@@ -1,5 +1,5 @@
 <template>
-  <div class="md:container md:mx-auto my-5">
+  <div class="container md:container md:mx-auto my-5">
     <div className="flex flex-col  w-full">
       <h1 class="text-4xl font-extrabold capitalize py-12">
         CALCULA EL PESO DE TU PAQUETE
@@ -7,8 +7,11 @@
       <div class="flex flex-wrap justify-center pt-10 pb-10">
         <img src="../assets/CajaODM.png" class="h-auto max-w-sm" alt="" />
       </div>
-      <div class="bg-[#D9D9D9] h-auto w-full">
-        <div class="grid-container grid grid-cols-6 my-4 items-center pt-5">
+      <div class="container bg-[#D9D9D9] w-full">
+       <h2 class="text-3xl ml-10 font-extrabold px-14 py-1 pb-7">
+    Calculadora de peso volumétrico
+  </h2>
+        <div class="container grid-container grid grid-cols-6 my-4 items-center pt-5">
           <label
             class="col-span-1 mx-10 text-gray-700 text-xl font-bold"
             for="inline-alto"
