@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen -mb-10">
+  <div class="w-screen -mb-10 sm:w-auto">
     <header class="w-screen">
       <div class="xl:bg-white pt-10">
         <nav
@@ -10,10 +10,10 @@
             <div @click="toggleNav" class="flex md:hidden">
               <button
                 type="button"
-                class="text-[#003368] hover:text-gray-400 focus:outline-none focus:text-gray-400
+                class="text-[#003368] hover:text-gray-900 focus:outline-none focus:text-gray-800
                 "
               >
-                <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                <svg viewBox="0 0 24 24" class="w-20 h-18 fill-current">
                   <path
                     fill-rule="evenodd"
                     d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
@@ -67,8 +67,8 @@
           AHORRA HASTA 60% EN <br />LOGÍSTICA PARA TU <br />
           EMPRESA
         </h1>
-        <ul class="xl:flex flex-col xl:space-y-4 list-disc xl:object-left py-5 xl:pt-20 xl:pb-20 xl:text-3xl
-        sm:text-2xl sm:pb-24 sm:space-y-2">
+        <ul class="xl:flex flex-col xl:space-y-4 list-disc xl:object-left py-5 xl:w-auto xl:pt-20 xl:pb-20 xl:text-3xl
+        sm:text-2xl sm:pb-20 sm:space-y-2 sm:w-[500px] sm:ml-[-30px]">
           <li>Tarifas preferenciales para empresas</li>
           <li>
             Envía y recibe paquetes el mismo día

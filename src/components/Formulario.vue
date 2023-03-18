@@ -2,24 +2,24 @@
   <h1 class="text-4xl font-extrabold capitalize px-20 py-12 mt-10">
     TARIFAS PREFERENCIALES
   </h1>
-  <h2 class="text-3xl ml-10 font-extrabold capitalize px-14 py-1 pb-7">
+  <h2 class="text-3xl ml-10 font-extrabold capitalize px-14 py-1">
     Para impulsar tu negocio
   </h2>
-  <!-- component -->
   <div
-    class="relative flex items-top justify-center min-h-screen bg-white dark:bg-gray-900 sm:items-center sm:pt-0"
+    class="relative flex items-top justify-center mt-0 bg-white dark:bg-white sm:items-center xl:mt-0 sm:pt-0"
   >
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
       <div class="mt-8 overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="p-6 mr-2 bg-white dark:bg-gray-800 sm:rounded-lg">
+          
+          <div class="p-6 mr-2 bg-white dark:bg-white sm:rounded-lg">
             <h1
-              class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight"
+              class="text-4xl sm:text-5xl text-black dark:text-black font-extrabold tracking-tight"
             >
               ¡Escríbenos!
             </h1>
             <p
-              class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2"
+              class="text-normal pt-2 text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2"
             >
               Y nos pondremos en contacto a la brevedad.
             </p>
@@ -49,7 +49,7 @@
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              <div class="ml-4 text-md tracking-wide font-semibold w-40">
+              <div class="ml-4 text-md tracking-wide font-semibold w-80">
                 Av Central 56, Nueva Industrial Vallejo, Gustavo A. Madero,
                 07700 Ciudad de México, CDMX
               </div>
@@ -75,7 +75,7 @@
                 />
               </svg>
               <div class="ml-4 text-md tracking-wide font-semibold w-40">
-                +52 55-51-41-43-00
+                55-51-41-43-00
               </div>
             </div>
 
@@ -103,7 +103,6 @@
               </div>
             </div>
           </div>
-
           <form class="p-6 flex flex-col justify-center">
             <div class="flex flex-col">
               <label for="name" class="hidden">Nombre completo</label>
@@ -112,12 +111,9 @@
                 name="name"
                 id="name"
                 placeholder="Nombre completo"
-                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
               />
             </div>
-
-           
-
             <div class="flex flex-col mt-2">
               <label for="tel" class="hidden">Teléfono</label>
               <input
@@ -125,21 +121,41 @@
                 name="tel"
                 id="tel"
                 placeholder="Teléfono"
-                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
               />
             </div>
-             <div class="flex flex-col mt-2">
+            <div class="flex flex-col mt-2">
+              <label for="tel" class="hidden">Ciudad</label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder="Ciudad"
+                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+              />
+            </div>
+            <div class="flex flex-col mt-2">
+              <label for="tel" class="hidden">Nombre de tu empresa</label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder="Nombre de tu empresa"
+                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+              />
+            </div>
+            <div class="flex flex-col mt-2">
               <label for="email" class="hidden">Correo electrónico</label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Teléfono"
-                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                placeholder="Correo electrónico"
+                class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
               />
             </div>
 
-            <div class="pl-10">
+            <div class="xl:pl-10 xl:pt-5 sm:pt-10 sm:flex sm:justify-center">
               <button
                 class="bg-[#003368] py-7 px-12 text-white active:bg-[#D9D9D9] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
@@ -161,16 +177,7 @@
                       class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t"
                     >
                       <h3 class="text-3xl font-semibold">¡EXCELENTE!</h3>
-                      <button
-                        class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                        v-on:click="toggleModal()"
-                      >
-                        <span
-                          class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
-                        >
-                          ×
-                        </span>
-                      </button>
+                      
                     </div>
                     <!--body-->
                     <div class="relative p-6 flex-auto">
