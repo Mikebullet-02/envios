@@ -2,6 +2,7 @@
 module.exports = {
   content: [],
   theme: {
+    
     extend: {
       colors: {
         'odm':'#003368',

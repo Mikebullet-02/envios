@@ -8,7 +8,7 @@
   <div
     class="relative flex items-top justify-center mt-0 bg-white dark:bg-white sm:items-center xl:mt-0 sm:pt-0"
   >
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 pb-10">
       <div class="mt-8 overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-2">
           
@@ -157,7 +157,7 @@
 
             <div class="xl:pl-10 xl:pt-5 sm:pt-10 sm:flex sm:justify-center">
               <button
-                class="bg-[#003368] py-7 px-12 text-white active:bg-[#D9D9D9] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                class="bg-[#003368] py-7 px-12 text-white active:bg-[#D9D9D9] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none xl:mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
                 v-on:click="toggleModal()"
               >
@@ -198,9 +198,6 @@
                       >
                         OK
                       </button>
-                      <!--<button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" v-on:click="toggleModal()">
-              Save Changes
-            </button>-->
                     </div>
                   </div>
                 </div>

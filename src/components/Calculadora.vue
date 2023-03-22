@@ -1,13 +1,14 @@
 <template>
+<h1 class="text-4xl font-extrabold capitalize px-14 py-14 pl-32">
+      CALCULA EL PESO DE TU PAQUETE
+    </h1>
   <div class="container md:container md:mx-auto my-5 w-screen">
     <div className="flex flex-col  w-full">
-      <h1 class="text-4xl font-extrabold capitalize py-12">
-        CALCULA EL PESO DE TU PAQUETE
-      </h1>
+      
       <div class="flex flex-wrap justify-center pt-10 pb-10">
         <img src="../assets/caja.png" class="h-auto max-w-sm" alt="" />
       </div>
-      <div class="container bg-[#D9D9D9] w-full">
+      <div class="bg-[#D9D9D9] w-full">
         <h2
           class="text-3xl ml-10 font-extrabold px-14 py-1 pt-10 pb-7 text-center"
         >
@@ -78,7 +79,7 @@
     </div>
   </div>
   <div
-    class="h-auto w-full pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle"
+    class="h-auto w-full pt-5 pb-5 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl"
   >
     <p>UTILIZA LA FÓRMULA:</p>
     <p>(Alto(cm) * Ancho(cm) * Largo(cm))/6000</p>
