@@ -2,7 +2,7 @@
 <h1 class="text-4xl font-extrabold capitalize px-14 py-14 pl-32">
       CALCULA EL PESO DE TU PAQUETE
     </h1>
-  <div class="container md:container md:mx-auto my-5 w-screen">
+  <div class="container md:container md:mx-auto my-5 w-screen xl:pl-20 xl:pr-20">
     <div className="flex flex-col  w-full">
       
       <div class="flex flex-wrap justify-center pt-10 pb-10">
@@ -70,7 +70,7 @@
         </div>
         <div class="my-4">
           <div class="flex items-cener justify-center">
-            <span class="col-span-1 mx-10 text-gray-700 text-xl font-bold"
+            <span class="col-span-1 mx-10 text-black text-xl font-bold"
               >Peso: {{ peso }} Kg</span
             >
           </div>

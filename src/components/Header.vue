@@ -31,33 +31,29 @@
               class="text-[#003368] hover:text-blue-600 font-extrabold text-2xl text-center sm:text-white md:text-[#003368] xl:text-[#003368]"
             >
               
-              <router-link to="/envios"
-                >Tipos <br />
-                de envíos</router-link
-              >
-            </li>
-            <li
-              class="text-[#003368] hover:text-blue-600 font-extrabold text-2xl text-center sm:text-white md:text-[#003368] xl:text-[#003368]"
-            >
-              <router-link to="/cobertura"
-                >Cobertura <br />
-                de envíos
-              </router-link>
-            </li>
-            <li
-              class="text-[#003368] hover:text-blue-600 font-extrabold text-2xl text-center sm:text-white md:text-[#003368] xl:text-[#003368]"
-            >
-              <a href="#">
-                Calcula tu <br />
-                paquete</a
-              >
-            </li>
-            <li
-              class="text-[#003368] hover:text-blue-600 font-extrabold text-2xl text-center sm:text-white md:text-[#003368] xl:text-[#003368]"
-            >
               <a href="#"
-                >Tarifas <br />
-                preferenciales
+                >Tipos<br />de envíos</a
+              >
+            </li>
+            <li
+              class="text-[#003368] hover:text-blue-600 font-extrabold text-2xl text-center sm:text-white md:text-[#003368] xl:text-[#003368]"
+            >
+              <a href="/#"
+                >Cobertura<br> de envíos
+              </a>
+            </li>
+            <li
+              class="text-[#003368] hover:text-blue-600 font-extrabold text-2xl text-center sm:text-white md:text-[#003368] xl:text-[#003368]"
+            >
+              <a href="">
+                Calcula<br> tu paquete</a
+              >
+            </li>
+            <li
+              class="text-[#003368] hover:text-blue-600 font-extrabold text-2xl text-center sm:text-white md:text-[#003368] xl:text-[#003368]"
+            >
+              <a href=""
+                >Tarifas<br> preferenciales
               </a>
             </li>
           </ul>
@@ -68,13 +64,15 @@
         class="w-screen mt-[-100px] bg-inherit py-40 px-48 text-start text-neutral-800"
       >
         <h1
-          class="mb-6 text-[#003368] text-9xl font-bold blue:bg-neutral-700 lg:pl-[-30px] md:pl-[20px] xl:ml-[10px] sm:ml-[-100px] tracking-widest lg:text-6xl md:text-5xl sm:text-5xl"
+          class="mb-6 text-[#003368] text-9xl font-bold blue:bg-neutral-700 lg:pl-[-30px] md:pl-[20px] xl:ml-[10px] sm:ml-[-100px] tracking-widest lg:text-6xl md:text-5xl
+          xs:text-6xl xs:ml-[-120px]"
         >
           AHORRA HASTA 60% EN <br />LOGÍSTICA PARA TU <br />
           EMPRESA
         </h1>
         <ul
-          class="xl:flex flex-col xl:space-y-4 list-disc xl:object-left py-5 xl:w-auto xl:pt-20 xl:pb-20 xl:text-3xl xl:ml-[-20px] sm:text-2xl sm:pb-20 sm:space-y-2 sm:w-[500px] sm:ml-[-100px]"
+          class="xl:flex flex-col xl:space-y-4 list-disc xl:object-left py-5 xl:w-auto xl:pt-20 xl:pb-20 xl:text-3xl xl:ml-[-20px] sm:text-2xl sm:pb-20 sm:space-y-2 sm:w-[500px] sm:ml-[-100px]
+          xs:text-3xl xs:w-[500px] xs:ml-[-130px]"
         >
           <li>Tarifas preferenciales para empresas</li>
           <li>
@@ -91,10 +89,11 @@
           </li>
         </ul>
         <img
-          class="w-80 h-auto grid justify-items-end float-right mt-[-500px] xl:opacity-100 sm:opacity-0"
+          class="w-80 h-auto grid justify-items-end float-right mt-[-550px] xl:opacity-100 sm:opacity-0 xs:opacity-0"
           src="../assets/personajeODM.png"
         />
-        <div class="container px-32 xl:ml-[20px] sm:ml-[-298px]">
+        
+        <div class="px-32 xl:ml-[20px] xs:ml-[-320px] xs:w-[0px]">
           <button
             class="bg-[#003368] w-[600px] h-28 hover:bg-blue-600 text-white text-4xl font-extrabold py-2 px-4 rounded-full"
           >

@@ -157,7 +157,7 @@
 
             <div class="xl:pl-10 xl:pt-5 sm:pt-10 sm:flex sm:justify-center">
               <button
-                class="bg-[#003368] py-7 px-12 text-white active:bg-[#D9D9D9] font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none xl:mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150"
+                class="bg-[#003368] py-7 px-12 text-white active:bg-[#D9D9D9] font-bold uppercase text-2xl px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none xl:mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
                 v-on:click="toggleModal()"
               >
