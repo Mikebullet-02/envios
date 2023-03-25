@@ -1,25 +1,19 @@
 <template>
-  <router-view />
   <Header></Header>
-  <Envios></Envios>
-  <h1 class="text-4xl font-extrabold capitalize px-14 py-14 pl-32">
+  <div class="pl-5 pr-5">
+    <Envios></Envios>
+    <h1 class="text-4xl font-extrabold capitalize px-14 py-14 pl-32">
       COBERTURA DE ENVÍOS
     </h1>
-  <div class="mx-auto py-10 xl:pl-20 xl:pr-20">
-    <div class="xl:flex xl:flex-none xl:items-center xl:pb-20 sm:flex-auto">
-      <div class="container xl:ml-28 xl:mt-10">
-        <div class="container flex-none sm:w-[500px] sm:ml-20">
+    <div class="mx-auto py-10 pl-20 pr-20">
+      <div class="flex flex-wrap justify-center items-center py-10">
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
           <select
             v-model="origen"
             @change="(e) => cargar(e)"
-            class="bg-white mt-0 border border-gray-300 text-black text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block xl:w-[600px] 
-            xl:h-20 xs:w-[500px] xs:ml-10
-            p-2.5 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500
-            xs:h-16"
+            class="block w-full py-3 px-4 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option selected="¿Dónde dejar tus paquetes?">
-              ¿Dónde dejar tus paquetes?
-            </option>
+            <option selected>¿Dónde dejar tus paquetes?</option>
             <option
               v-for="destinos in databaseStore.$state.documents"
               :key="destinos.id"
@@ -28,130 +22,76 @@
               {{ destinos.origen }}
             </option>
           </select>
-        </div>
-        <div class="xl:mt-10 xs:mt-7 xs:pl-12 xs:mb-5">
-          <h2 class="xl:text-3xl xs:text-2xl font-bold">Dirección</h2>
-          <h3 class="text-gray-500 xl:text-2xl xs:text-xl">De:</h3>
-          <p v-if="origen != null" class="xl:text-2xl xs:text-xl">
-            {{ origen.ubicacion }}
-          </p>
-        </div>
-      </div>
-      <div class="container xl:ml-40 xl:mt-5">
-        <select
-          v-model="destino"
-          class="bg-white mt-0 border border-gray-300 text-black text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block xl:w-[600px] xl:h-20 xs:w-[500px] p-2.5 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500
-          xl:ml-0 xs:ml-10 xs:h-16"
-        >
-          <option value="">¿Dónde recoger tus paquetes?</option>
-          <option
-            v-for="destinos in databaseStore.$state.destinos"
-            :key="destinos.id"
-            :value="destinos"
-          >
-            {{ destinos.nombre }}
-          </option>
-        </select>
-
-        <div class="xl:mt-10 xs:mt-7 xs:pl-12">
-          <h2 class="xl:text-3xl xs:text-2xl font-bold">Dirección</h2>
-          <h3 class="text-gray-500 xl:text-2xl xs:text-xl">A:</h3>
-          <p v-if="destino != null" class="xl:text-2xl xs:text-xl">
-            {{ destino.direccion }}
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-1 xs:grid-cols-1 md:grid-cols-3 xl:grid-cols-2 gap-4 px-20 xl:pt-0 xs:pt-10"
-    >
-      <div
-        class="flex flex-col items-center justify-center bg-gray-400 p-4 shadow rounded-lg xl:w-auto xl:h-[611px] 
-        xs:h-[150px] xs:w-screen"
-      >
-        <h2 class="xl:mt-[-10px] font-extrabold xl:text-6xl xs:mt-[-0px] xs:text-2xl">Sobres</h2>
-        <h6 class="xl:mt-40 xl:text-4xl font-bold xl:pt-[0px] xl:pb-10 xs:mt-[20px]">Hasta 25 hojas</h6>
-
-        <div
-          v-if="destino != null"
-          class="xl:mb-0 xl:text-xl font-medium leading-tight
-          xs:text-sm
-           text-neutral-800 dark:text-neutral-50"
-        >
-          <p class="xl:text-7xl xl:mt-20 xs:text-2xl xs:mt-5">${{ destino.precios.SOB }}</p>
-        </div>
-      </div>
-
-      <div
-        class="flex flex-col items-center justify-center bg-gray-400 p-4 shadow rounded-lg xl:w-auto xl:h-[611px] 
-        xs:h-[150px] xs:w-screen"
-      >
-        <h2 class="xl:mt-[-10px] font-extrabold xl:text-6xl xs:mt-[-0px] xs:text-2xl">Paquetes</h2>
-        <h6 class="xl:mt-40 xl:text-4xl font-bold xl:pt-[0px] xl:pb-10 xs:mt-[20px]">De 0 - 1 Kg</h6>
-
-        <div v-if="destino != null">
-          <div
-            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-          >
-            <p class="xl:text-7xl xl:mt-20 xs:text-2xl xs:mt-5">${{ destino.precios.PAQ }}</p>
+          <div class="mt-4">
+            <h2 class="text-2xl font-bold">Dirección</h2>
+            <h3 class="text-gray-500 text-lg">De:</h3>
+            <p v-if="origen != null" class="text-lg">{{ origen.ubicacion }}</p>
           </div>
         </div>
-      </div>
-      <div
-        class="flex flex-col items-center justify-center bg-gray-400 p-4 shadow rounded-lg xl:w-auto xl:h-[611px] 
-        xs:h-[150px] xs:w-screen"
-      >
-        <h2 class="xl:mt-[-10px] font-extrabold xl:text-6xl xs:mt-[-0px] xs:text-2xl">Cajas</h2>
-        <h6 class="xl:mt-40 xl:text-4xl font-bold xl:pt-[0px] xl:pb-10 xs:mt-[20px]">De 1 - 10 Kg</h6>
-
-        <div v-if="destino != null">
-          <div
-            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+        <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
+          <select
+            v-model="destino"
+            class="block w-full py-3 px-4 leading-tight text-gray-700 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-[#D9D9D9] dark:border-white dark:placeholder-gray-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <p class="xl:text-7xl xl:mt-20 xs:text-2xl xs:mt-5">${{ destino.precios.C1 }}</p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex flex-col items-center justify-center bg-gray-400 p-4 shadow rounded-lg xl:w-auto xl:h-[611px] 
-        xs:h-[150px] xs:w-screen"
-      >
-        <h2 class="xl:mt-[-10px] font-extrabold xl:text-6xl xs:mt-[-0px] xs:text-2xl">Cajas</h2>
-        <h6 class="xl:mt-40 xl:text-4xl font-bold xl:pt-[0px] xl:pb-10 xs:mt-[20px]">De 11 - 20 Kg</h6>
-
-        <div v-if="destino != null">
-          <div
-            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-          >
-            <p class="xl:text-7xl xl:mt-20 xs:text-2xl xs:mt-5">${{ destino.precios.C2 }}</p>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex flex-col items-center justify-center bg-gray-400 p-4 shadow rounded-lg xl:w-[1600px] xl:h-[611px] 
-        xs:h-[150px] xs:w-screen"
-      >
-        <h2 class="xl:mt-[-10px] font-extrabold xl:text-6xl xs:mt-[-0px] xs:text-2xl">Maletas</h2>
-        <h6 class="xl:mt-40 xl:text-4xl font-bold xl:pt-[0px] xl:pb-10 xs:mt-[20px]">De 21 - 30 kg</h6>
-
-        <div v-if="destino != null">
-          <div
-            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-          >
-            <p class="xl:text-7xl xl:mt-20 xs:text-2xl xs:mt-5">${{ destino.precios.C3 }}</p>
+            <option value="">¿Dónde recoger tus paquetes?</option>
+            <option
+              v-for="destinos in databaseStore.$state.destinos"
+              :key="destinos.id"
+              :value="destinos"
+            >
+              {{ destinos.nombre }}
+            </option>
+          </select>
+          <div class="mt-4">
+            <h2 class="text-2xl font-bold">Dirección</h2>
+            <h3 class="text-gray-500 text-lg">A:</h3>
+            <p v-if="destino != null" class="text-lg">
+              {{ destino.direccion }}
+            </p>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
     >
-      <p>***VALOR DE REFERENCIA SUJETO A CAMBIOS***</p>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center">Sobres</h2>
+        <h2 class="font-extrabold text-3xl text-center">Hasta 25 hojas</h2>
+        <p class="mt-4 text-2xl text-center">${{ destino.precios.SOB }}</p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center">Paquetes</h2>
+        <h2 class="font-extrabold text-3xl text-center">De 0 - 1 Kg.</h2>
+        <p class="mt-4 text-2xl text-center">${{ destino.precios.PAQ }}</p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center">Cajas</h2>
+        <h2 class="font-extrabold text-3xl text-center">De 1 - 10 Kg.</h2>
+        <p class="mt-4 text-2xl text-center">${{ destino.precios.C1 }}</p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center">Cajas</h2>
+        <h2 class="font-extrabold text-3xl text-center">De 11 - 20 Kg.</h2>
+        <p class="mt-4 text-2xl text-center">${{ destino.precios.C2 }}</p>
+      </div>
+      <div v-if="destino != null" class="bg-gray-400 p-4 shadow rounded-lg">
+        <h2 class="font-extrabold text-4xl text-center">Maletas</h2>
+        <h2 class="font-extrabold text-3xl text-center">De 21 - 30 Kg.</h2>
+        <p class="mt-4 text-2xl text-center">${{ destino.precios.C3 }}</p>
+      </div>
     </div>
+
+    <div
+    class="xl:h-auto xl:w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl xl:pl-0 xl:pr-0 "
+  >
+    <p>***VALOR DE REFERENCIA SUJETO A CAMBIOS***</p>
+    
   </div>
 
-  <Calculadora></Calculadora>
-  <Formulario></Formulario>
+    <Calculadora></Calculadora>
+    <Formulario></Formulario>
+  </div>
   <Footer></Footer>
   <router-view />
 </template>
