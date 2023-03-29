@@ -2,7 +2,7 @@
   <Header></Header>
   <div class="flex flex-col justify-center items-center w-full px-3 lg:px-20">
     <Envios></Envios>
-    <h1 class="font-extrabold capitalize px-14 py-3">COBERTURA DE ENVÍOS</h1>
+    <h1 class="text-4xl font-extrabold capitalize px-10 py-14">COBERTURA DE ENVÍOS</h1>
     <div class="mx-auto">
       <div class="flex flex-wrap justify-center py-10">
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">
@@ -91,7 +91,7 @@
     </div>
 
     <div
-      class="xl:h-auto xl:w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl xl:pl-0 xl:pr-0"
+      class="h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl pl-0 pr-0"
     >
       <p>***VALOR DE REFERENCIA SUJETO A CAMBIOS***</p>
     </div>

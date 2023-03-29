@@ -37,7 +37,7 @@
           </a>
         </div>
       </nav>
-      <img src="../assets/logoblanco.webp" alt="Logo" class="w-auto h-auto mx-auto" />
+      <img src="../assets/logoODMenvios.png" alt="Logo" class="w-80 h-auto mx-auto" />
       <div class="flex justify-center mt-8 space-x-6">
         <a href="#" class="text-white hover:text-gray-500">
           <span class="sr-only">Facebook</span>

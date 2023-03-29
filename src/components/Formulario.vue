@@ -103,11 +103,12 @@
                 </div>
               </div>
             </div>
-            <form class="p-6 flex flex-col justify-center">
+            <form class="p-6 flex flex-col justify-center" @submit.prevent="submitForm">
               <div class="flex flex-col">
                 <label for="name" class="hidden">Nombre completo</label>
                 <input
-                  type="name"
+                v-model="formData.name"
+                  type="text"
                   name="name"
                   id="name"
                   placeholder="Nombre completo"
@@ -117,7 +118,8 @@
               <div class="flex flex-col mt-2">
                 <label for="tel" class="hidden">Teléfono</label>
                 <input
-                  type="tel"
+                v-model="formData.tel"
+                  type="number"
                   name="tel"
                   id="tel"
                   placeholder="Teléfono"
@@ -125,28 +127,31 @@
                 />
               </div>
               <div class="flex flex-col mt-2">
-                <label for="tel" class="hidden">Ciudad</label>
+                <label for="city" class="hidden">Ciudad</label>
                 <input
-                  type="tel"
-                  name="tel"
-                  id="tel"
+                v-model="formData.city"
+                  type="text"
+                  name="city"
+                  id="city"
                   placeholder="Ciudad"
                   class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
               <div class="flex flex-col mt-2">
-                <label for="tel" class="hidden">Nombre de tu empresa</label>
+                <label for="empresa" class="hidden">Nombre de tu empresa</label>
                 <input
-                  type="tel"
-                  name="tel"
-                  id="tel"
+                v-model="formData.empresa"
+                  type="text"
+                  name="empresa"
+                  id="empresa"
                   placeholder="Nombre de tu empresa"
                   class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
                 />
               </div>
               <div class="flex flex-col mt-2">
-                <label for="email" class="hidden">Correo electrónico</label>
+                <label for=" " class="hidden">Correo electrónico</label>
                 <input
+                v-model="formData.email"
                   type="email"
                   name="email"
                   id="email"
@@ -157,7 +162,7 @@
               <div class="pt-5 sm:pt-10 sm:flex sm:justify-center">
                 <button
                   class="bg-[#003368] py-7 px-12 text-white active:bg-[#D9D9D9] font-bold uppercase text-2xl px-6 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150"
-                  type="button"
+                  type="submit"
                   v-on:click="toggleModal()"
                 >
                   SOLICITAR TARIFA PREFERENTE
@@ -213,20 +218,42 @@
   </div>
 </template>
 <script>
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebaseConfig.js";
+import { ref } from "vue";
 export default {
   name: "regular-modal",
-  data() {
-    return {
-      showModal: false,
+  setup(){
+    const formData = ref({
+      name: "",
+      tel: "",
+      city: "",
+      empresa: "",
+      email: "",
+    });
+    const showModal = ref(false);
+    const toggleModal = () => {
+      showModal.value = !showModal.value;
     };
-  },
-  methods: {
-    toggleModal: function () {
-      this.showModal = !this.showModal;
-    },
-    closeModal: function () {
-      this.showModal = false;
-    },
-  },
+    const closeModal = () => {
+      showModal.value = false;
+    };
+    const submitForm = async () => {
+      try {
+        const docRef = await db.collection("contacts").add(formData.value);
+        toggleModal();
+        console.log("Document written with ID: ", docRef.id);
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    };
+    return {
+      formData,
+      showModal,
+      toggleModal,
+      closeModal,
+      submitForm,
+    };
+   }
 };
 </script>
