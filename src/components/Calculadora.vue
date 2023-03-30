@@ -1,22 +1,22 @@
 <template>
   <div class="w-full">
     <h1
-      class="font-extrabold capitalize w-full xl:px-14 xl:py-14 xl:pl-32 py-10"
+      class="text-4xl font-extrabold capitalize px-14 py-14"
     >
       CALCULA EL PESO DE TU PAQUETE
     </h1>
-    <div class="container mx-auto my-5 xl:pl-20 xl:pr-20">
+    <div class="container mx-auto my-5 bg-gradient-to-r from-gray-200">
       <div class="flex flex-col justify-center items-center">
         <div class="flex flex-wrap xl:justify-center">
           <img src="../assets/caja.png" class="h-auto max-w-sm" alt="" />
         </div>
         <div class="bg-[#D9D9D9] mx-auto">
-          <h2 class="text-3xl md:ml-10 font-extrabold text-center">
+          <h2 class="text-3xl md:ml-10 font-extrabold text-center mt-5">
             Calculadora de peso volumétrico
           </h2>
           <div class="w-full grid-container grid grid-cols-6 items-center pt-5">
             <label
-              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl font-bold"
+              class="col-span-1 mx-4 md:mx-10 text-gray-700 text-xl sm:lg font-bold"
               for="inline-alto"
               >Alto:</label
             >

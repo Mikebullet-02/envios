@@ -3,9 +3,9 @@
     <h1 class="text-4xl font-extrabold capitalize px-14 py-14">
       TIPOS DE ENVÍOS
     </h1>
-    <div class="flex flex-wrap justify-center items-center">
+    <div class="flex flex-wrap justify-center items-center space-x-0.5">
       <div
-        class="flex flex-col w-full max-w-md bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96 w-96"
+        class="flex flex-col w-full max-w-md  bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96 "
       >
         <div class="p-5">
           <h3
@@ -26,7 +26,7 @@
         />
       </div>
       <div
-        class="flex flex-col w-full max-w-md bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96 w-96"
+        class="flex flex-col w-full max-w-md bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96"
       >
         <div class="p-5">
           <h3
@@ -47,7 +47,7 @@
         />
       </div>
       <div
-        class="flex flex-col w-full max-w-md bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96 w-96"
+        class="flex flex-col w-full max-w-md bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96"
       >
         <div class="p-5">
           <h3
@@ -67,13 +67,13 @@
           </p>
         </div>
         <img
-          class="w-44 h-36 mx-auto my-0 py-0"
+          class="w-44 h-36 mx-auto my-0 py-0 mt-[-10px]"
           src="../assets/CajaODM.png"
           alt="Image Description"
         />
       </div>
       <div
-        class="flex flex-col w-full max-w-md bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96 w-96"
+        class="flex flex-col w-full max-w-md bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 my-3 h-96"
       >
         <div class="p-5">
           <h3
@@ -93,7 +93,7 @@
           </p>
         </div>
         <img
-          class="w-28 h-40 mx-auto mt-5 mb-10"
+          class="w-28 h-40 mx-auto mt-[-40px]"
           src="../assets/maleta.png"
           alt="Image Description"
         />
@@ -101,7 +101,7 @@
     </div>
 
     <div
-      class="h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl pl-0 pr-0 h-96 w-96"
+      class="h-auto w-auto pt-5 pb-5 mt-10 text-center bg-blue-900 text-white font-extrabold align-middle text-2xl pl-0 pr-0"
     >
       <p>VOLUMEN MÁXIMO EN TU ENVÍO:</p>
       <p>65 X 50 X 55 = 30cm^3</p>

@@ -2,7 +2,7 @@
   <Header></Header>
   <div class="flex flex-col justify-center items-center w-full px-3 lg:px-20">
     <Envios></Envios>
-    <h1 class="text-4xl font-extrabold capitalize px-10 py-14">COBERTURA DE ENVÍOS</h1>
+    <h1 class="text-4xl font-extrabold capitalize px-14 py-14">COBERTURA DE ENVÍOS</h1>
     <div class="mx-auto">
       <div class="flex flex-wrap justify-center py-10">
         <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 md:mb-0">

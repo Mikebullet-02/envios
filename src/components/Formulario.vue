@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <h1 class="font-extrabold capitalize px-20 py-12 mt-10">
+    <h1 class="text-4xl font-extrabold capitalize px-14 py-14">
       TARIFAS PREFERENCIALES
     </h1>
     <h2 class="text-3xl ml-10 font-extrabold capitalize px-14 py-1">
@@ -103,62 +103,56 @@
                 </div>
               </div>
             </div>
-            <form class="p-6 flex flex-col justify-center" @submit.prevent="submitForm">
+            <form
+              class="p-6 flex flex-col justify-center"
+              @submit.prevent="handleSubmit"
+            >
               <div class="flex flex-col">
                 <label for="name" class="hidden">Nombre completo</label>
                 <input
-                v-model="formData.name"
                   type="text"
-                  name="name"
-                  id="name"
                   placeholder="Nombre completo"
                   class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                  v-model="url"
                 />
               </div>
-              <div class="flex flex-col mt-2">
-                <label for="tel" class="hidden">Teléfono</label>
+              <div class="flex flex-col">
+                <label for="name" class="hidden">Teléfono</label>
                 <input
-                v-model="formData.tel"
                   type="number"
-                  name="tel"
-                  id="tel"
                   placeholder="Teléfono"
                   class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                  v-model="telefono"
                 />
               </div>
-              <div class="flex flex-col mt-2">
-                <label for="city" class="hidden">Ciudad</label>
+              <div class="flex flex-col">
+                <label for="name" class="hidden">Nombre de tu empresa</label>
                 <input
-                v-model="formData.city"
                   type="text"
-                  name="city"
-                  id="city"
-                  placeholder="Ciudad"
-                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
-                />
-              </div>
-              <div class="flex flex-col mt-2">
-                <label for="empresa" class="hidden">Nombre de tu empresa</label>
-                <input
-                v-model="formData.empresa"
-                  type="text"
-                  name="empresa"
-                  id="empresa"
                   placeholder="Nombre de tu empresa"
-                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                  v-model="empresa"
                 />
               </div>
-              <div class="flex flex-col mt-2">
-                <label for=" " class="hidden">Correo electrónico</label>
+              <div class="flex flex-col">
+                <label for="name" class="hidden">Ciudad</label>
                 <input
-                v-model="formData.email"
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Correo electrónico"
-                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
+                  type="text"
+                  placeholder="Ciudad"
+                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                  v-model="ciudad"
                 />
               </div>
+              <div class="flex flex-col">
+                <label for="name" class="hidden">Correo electrónico</label>
+                <input
+                  type="email"
+                  placeholder="Correo electrónico"
+                  class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-white border border-gray-400 dark:border-gray-700 text-gray-900 font-semibold focus:border-indigo-500 focus:outline-none"
+                  v-model="email"
+                />
+              </div>
+                
               <div class="pt-5 sm:pt-10 sm:flex sm:justify-center">
                 <button
                   class="bg-[#003368] py-7 px-12 text-white active:bg-[#D9D9D9] font-bold uppercase text-2xl px-6 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-10 sm:mr-1 mb-1 ease-linear transition-all duration-150"
@@ -167,7 +161,8 @@
                 >
                   SOLICITAR TARIFA PREFERENTE
                 </button>
-                <div
+              </div>
+              <div
                   v-if="showModal"
                   class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
                 >
@@ -209,7 +204,7 @@
                   v-if="showModal"
                   class="opacity-25 fixed inset-0 z-40 bg-black"
                 ></div>
-              </div>
+              
             </form>
           </div>
         </div>
@@ -217,43 +212,41 @@
     </div>
   </div>
 </template>
-<script>
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../firebaseConfig.js";
+<script setup>
+import { collection } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 import { ref } from "vue";
-export default {
-  name: "regular-modal",
-  setup(){
-    const formData = ref({
-      name: "",
-      tel: "",
-      city: "",
-      empresa: "",
-      email: "",
-    });
-    const showModal = ref(false);
+import { userDatabaseStore } from "../stores/database.js";
+const databaseStore = userDatabaseStore();
+const showModal = ref(false);
     const toggleModal = () => {
       showModal.value = !showModal.value;
     };
     const closeModal = () => {
       showModal.value = false;
     };
-    const submitForm = async () => {
-      try {
-        const docRef = await db.collection("contacts").add(formData.value);
-        toggleModal();
-        console.log("Document written with ID: ", docRef.id);
-      } catch (error) {
-        console.error("Error adding document: ", error);
-      }
-    };
-    return {
-      formData,
-      showModal,
-      toggleModal,
-      closeModal,
-      submitForm,
-    };
-   }
-};
+
+const url = ref('');
+const telefono = ref('');
+const empresa = ref('');
+const ciudad = ref('');
+const email = ref('');
+const handleSubmit = () => {
+  if (!url.value || !telefono.value || !empresa.value || !ciudad.value || !email.value) {
+    alert('Please fill in all fields');
+    return;
+  }
+  if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
+    alert('Please enter a valid email address');
+    return;
+  }
+  databaseStore.addUrl(url.value, telefono.value, empresa.value, ciudad.value, email.value)
+  console.log('FORMULARIO');
+  url.value = '';
+  telefono.value = '';
+  empresa.value = '';
+  ciudad.value = '';
+  email.value = '';
+}
+
 </script>

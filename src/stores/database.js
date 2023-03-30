@@ -3,6 +3,7 @@ import {
   getDocs,
   query,
   where,
+  addDoc,
   getDoc,
 } from "firebase/firestore/lite";
 import { defineStore } from "pinia";
@@ -34,5 +35,25 @@ export const userDatabaseStore = defineStore("database", {
         this.destinos = doc.data().destinos;
       });
     },
+    // Add document to a collection
+    async addUrl(name, phoneNumber, enterprise, city, email) {
+      this.loadingDoc = true;
+      try {
+          const docObjeto = {
+              nombre: name,
+              telefono: phoneNumber,
+              empresa: enterprise,
+              ciudad: city,
+              email: email,
+          };
+          const q = query(collection(db, 'contacts'))
+          const docRef = await addDoc(q, docObjeto);
+          this.documents.push({ id: docRef.id, ...docObjeto });
+      } catch (error) {
+          console.log(error);
+      } finally {
+          this.loadingDoc = false;
+      }
+  },
   },
 });

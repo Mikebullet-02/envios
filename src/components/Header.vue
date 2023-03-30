@@ -1,7 +1,7 @@
 <template>
   <div class="w-screen sm:w-auto">
     <header class="w-screen">
-      <div class="bg-white pt-10">
+      <div class="bg-[#FFFFFF] pt-10">
         <nav
           class="container px-6 py-8 mr-4 md:mr-20 mx-auto md:flex md:justify-between md:items-center"
         >

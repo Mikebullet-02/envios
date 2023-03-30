@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#003368]">
+  <section class="bg-neutral-300">
     <div
       class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8"
     >
@@ -7,7 +7,7 @@
         <div class="px-5 py-2">
           <a
             href="https://odm.com.mx/quienes-somos2"
-            class="text-base leading-6 text-white hover:text-gray-300"
+            class="text-base leading-6 text-neutral-700 hover:text-gray-600"
           >
             ¿Quiénes somos?
           </a>
@@ -15,7 +15,7 @@
         <div class="px-5 py-2">
           <a
             href="https://odm.com.mx/preguntas-frecuentes"
-            class="text-base leading-6 text-white hover:text-gray-300"
+            class="text-base leading-6 text-neutral-700 hover:text-gray-600"
           >
             Preguntas frecuentes
           </a>
@@ -23,7 +23,7 @@
         <div class="px-5 py-2">
           <a
             href="http://venta.odm.com.mx/netScripts/request.aspx?APPNAME=Navegante&PRGNAME=AccesoEx&ARGUMENTS=-AAG&_gl=1*z7x1y0*_ga*NjAyODM2MzE2LjE2NzI0MjgyOTU.*_ga_6MKKJY80T1*MTY3OTY3MDk4NC4xMDQuMS4xNjc5NjcyNjE0LjQ5LjAuMA.."
-            class="text-base leading-6 text-white hover:text-gray-300"
+            class="text-base leading-6 text-neutral-700 hover:text-gray-600"
           >
             Agencias
           </a>
@@ -31,7 +31,7 @@
         <div class="px-5 py-2">
           <a
             href="https://odm.com.mx/contactanos"
-            class="text-base leading-6 text-white hover:text-gray-300"
+            class="text-base leading-6 text-neutral-700 hover:text-gray-600"
           >
             Contáctanos
           </a>
@@ -39,7 +39,7 @@
       </nav>
       <img src="../assets/logoODMenvios.png" alt="Logo" class="w-80 h-auto mx-auto" />
       <div class="flex justify-center mt-8 space-x-6">
-        <a href="#" class="text-white hover:text-gray-500">
+        <a href="#" class="text-neutral-700 hover:text-white">
           <span class="sr-only">Facebook</span>
           <svg
             class="w-6 h-6"
@@ -54,7 +54,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-white hover:text-gray-500">
+        <a href="#" class="text-neutral-700 hover:text-white">
           <span class="sr-only">Twitter</span>
           <svg
             class="w-6 h-6"
@@ -67,7 +67,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-white hover:text-gray-500">
+        <a href="#" class="text-neutral-700 hover:text-white">
           <span class="sr-only">Instagram</span>
           <svg
             class="w-6 h-6"
@@ -82,7 +82,7 @@
             ></path>
           </svg>
         </a>
-        <a href="#" class="text-white hover:text-gray-500">
+        <a href="#" class="text-neutral-700 hover:text-white">
           <span class="sr-only">YouTube</span>
           <svg
             aria-hidden="true"
@@ -98,10 +98,10 @@
           </svg>
         </a>
       </div>
-      <p class="mt-8 text-base leading-6 text-center text-white hover:text-gray-500">
+      <p class="mt-8 text-base leading-6 text-center text-neutral-700 hover:text-white">
         <a href="https://odm.com.mx/aviso-privacidad">Aviso de privacidad | Políticas de viaje</a>
       </p>
-      <p class="mt-8 text-base leading-6 text-center text-white hover:text-gray-500">
+      <p class="mt-8 text-base leading-6 text-center text-neutral-700 hover:text-white">
         © 2023 Ómnibus de México. Todos los derechos reservados.
       </p>
     </div>
